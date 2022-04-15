@@ -19,7 +19,7 @@ class App extends React.Component{
 
     return(
         <Routes>
-          <Route path={'/'} element={<HomePage/>}/>
+          <Route path={'/pizza-anatot/'} element={<HomePage/>}/>
         </Routes>
         
       
