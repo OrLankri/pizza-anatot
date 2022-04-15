@@ -19,7 +19,7 @@ class App extends React.Component{
 
     return(
         <Routes>
-          <Route exact path={'/'} element={<HomePage/>}/>
+          <Route path={'/'} element={<HomePage/>}/>
         </Routes>
         
       
