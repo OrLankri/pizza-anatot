@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/pizza-anatot/static/css/main.be7f7639.css",
-    "main.js": "/pizza-anatot/static/js/main.36f17742.js",
+    "main.css": "/pizza-anatot/static/css/main.f0c24181.css",
+    "main.js": "/pizza-anatot/static/js/main.229e8e9a.js",
     "static/js/787.8a5aa0b0.chunk.js": "/pizza-anatot/static/js/787.8a5aa0b0.chunk.js",
     "index.html": "/pizza-anatot/index.html",
-    "main.be7f7639.css.map": "/pizza-anatot/static/css/main.be7f7639.css.map",
-    "main.36f17742.js.map": "/pizza-anatot/static/js/main.36f17742.js.map",
+    "main.f0c24181.css.map": "/pizza-anatot/static/css/main.f0c24181.css.map",
+    "main.229e8e9a.js.map": "/pizza-anatot/static/js/main.229e8e9a.js.map",
     "787.8a5aa0b0.chunk.js.map": "/pizza-anatot/static/js/787.8a5aa0b0.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.be7f7639.css",
-    "static/js/main.36f17742.js"
+    "static/css/main.f0c24181.css",
+    "static/js/main.229e8e9a.js"
   ]
 }
