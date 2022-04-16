@@ -9,7 +9,7 @@ import '../../center.css'
 export const MainPage = ()=>{
     return(
     <div className="center">
-        <h1>מה תרצה לחשב?</h1>
+        <h1>?מה תרצה לחשב</h1>
         <Link to={'/pizza-anatot/pizzaCalculator'}><PizzaButton className={'button button--anthe'} text='פיצה'/></Link>
     </div>
     )
