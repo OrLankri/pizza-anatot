@@ -1,28 +1,44 @@
 
 import './App.css';
 import React from 'react';
-import { Route , Routes } from 'react-router-dom';
+import { Link, Route, Routes } from 'react-router-dom';
+import './header.css'
 
-import { HomePage } from './pages/homePage/homePage.component';
 
-class App extends React.Component{
-  constructor(){
-    super()
+import { CalculatePizzaPage } from './pages/calculatePizzaPage/calculatePizzaPage.component';
+import { PizzaButton } from './components/button/button.component';
+import { MainPage } from './pages/mainPage/mainPage.component';
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faHouseChimney } from '@fortawesome/free-solid-svg-icons';
+import { faPizzaSlice } from '@fortawesome/free-solid-svg-icons';
+
+class App extends React.Component {
+  constructor(props) {
+    super(props)
 
     this.state = {
+      price: 0
     }
   }
 
+  render() {
 
-  render(){
-    
 
-    return(
+    return (
+
+      <div>
+        <header className='header'>
+          <Link className='icon' to={'/pizza-anatot/pizzaCalculator'}><FontAwesomeIcon className='fa-1x' icon={faPizzaSlice} color='black' /></Link>
+          <Link className='icon' to={'/pizza-anatot'}><FontAwesomeIcon className={'fa-1x'} icon={faHouseChimney} color='black' /></Link>
+          {this.state.price}
+        </header>
         <Routes>
-          <Route path={'/pizza-anatot/'} element={<HomePage/>}/>
+          <Route path='pizza-anatot' element={<MainPage />} />
+          <Route path={'/pizza-anatot/pizzaCalculator'} element={<CalculatePizzaPage price={this.state.price} />} />
         </Routes>
-        
-      
+      </div>
+
 
     )
   }

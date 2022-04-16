@@ -1,0 +1,14 @@
+.header {
+    padding: 10px;
+    text-align: right;
+    background: gray;
+    color: white;
+    font-size: 30px;
+    
+  }
+.icon{
+    margin: 20px;
+}
+.price{
+    margin: 100px;
+}
