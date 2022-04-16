@@ -14,11 +14,10 @@ import { faHouseChimney } from '@fortawesome/free-solid-svg-icons';
 import { faPizzaSlice } from '@fortawesome/free-solid-svg-icons';
 
 class App extends React.Component {
-  constructor(props) {
-    super(props)
+  constructor() {
+    super()
 
     this.state = {
-      price: 0
     }
   }
 

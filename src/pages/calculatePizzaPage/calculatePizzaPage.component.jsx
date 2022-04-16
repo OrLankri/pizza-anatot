@@ -4,12 +4,12 @@ import './calculatePizzaPage.css'
 import { Quantity } from "../../components/quantity/quantity.component";
 
 export class CalculatePizzaPage extends React.Component {
-    constructor(props) {
-        super(props)
+    constructor() {
+        super()
 
 
         this.state = {
-            price: props.price,
+            price: 0,
             fTray: 0,
             usualExtra: 0,
             twoExtra: 0
@@ -20,7 +20,7 @@ export class CalculatePizzaPage extends React.Component {
 
 
     fTrayClick = () => {
-        this.setState({ props: this.state.price + 58 }, () => console.log(this.state.price))
+        this.setState({ price: this.state.price + 58 }, () => console.log(this.state.price))
         this.setState({ fTray: this.state.fTray + 1 }, () => console.log(this.state.fTray))
     }
 
