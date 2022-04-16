@@ -31,7 +31,6 @@ class App extends React.Component {
         <header className='header'>
           <Link className='icon' to={'/pizza-anatot/pizzaCalculator'}><FontAwesomeIcon className='fa-1x' icon={faPizzaSlice} color='black' /></Link>
           <Link className='icon' to={'/pizza-anatot'}><FontAwesomeIcon className={'fa-1x'} icon={faHouseChimney} color='black' /></Link>
-          {this.state.price}
         </header>
         <Routes>
           <Route path='pizza-anatot' element={<MainPage />} />
