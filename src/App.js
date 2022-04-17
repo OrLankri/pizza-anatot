@@ -8,10 +8,12 @@ import './header.css'
 import { CalculatePizzaPage } from './pages/calculatePizzaPage/calculatePizzaPage.component';
 import { PizzaButton } from './components/button/button.component';
 import { MainPage } from './pages/mainPage/mainPage.component';
+import { PhoneFormat } from './pages/phoneFormat/phoneFormat.component';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHouseChimney } from '@fortawesome/free-solid-svg-icons';
 import { faPizzaSlice } from '@fortawesome/free-solid-svg-icons';
+import { faPhone } from '@fortawesome/free-solid-svg-icons';
 
 /* a copy for SET the props to other components
 
@@ -52,8 +54,6 @@ class App extends React.Component {
   }
 
   render() {
-
-
     return (
 
       <div>
@@ -61,6 +61,7 @@ class App extends React.Component {
           <div>
             <div className='pricePos'>{this.state.price} :מחיר</div>
             <div>
+              <Link className='icon' to={'/pizza-anatot/phoneFormat'}><FontAwesomeIcon className={'fa-1x'} icon={faPhone} color='black' /></Link>
               <Link className='icon' to={'/pizza-anatot/pizzaCalculator'}><FontAwesomeIcon className='fa-1x' icon={faPizzaSlice} color='black' /></Link>
               <Link className='icon' to={'/pizza-anatot'}><FontAwesomeIcon className={'fa-1x'} icon={faHouseChimney} color='black' /></Link>
             </div>
@@ -85,8 +86,10 @@ class App extends React.Component {
             usualExtra={this.state.usualExtra} onChangeUsualExtra={(e) => this.setState({ usualExtra: e }, () => console.log(this.state.usualExtra))}
             twoExtra={this.state.twoExtra} onChangeTwoExtra={(e) => this.setState({ twoExtra: e }, () => console.log(this.state.twoExtra))}
             bigBottle={this.state.bigBottle}
-            onChangeBigBottle={(e) => this.setState({ bigBottle: e },()=>console.log(this.state.bigBottle))}
+            onChangeBigBottle={(e) => this.setState({ bigBottle: e }, () => console.log(this.state.bigBottle))}
           />} />
+
+          <Route path={'/pizza-anatot/phoneFormat'} element={<PhoneFormat />} />
 
         </Routes>
       </div>

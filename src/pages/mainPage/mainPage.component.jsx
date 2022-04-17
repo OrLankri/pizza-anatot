@@ -11,8 +11,10 @@ import { Conclusion } from "../../components/conclusion/conclusion.component";
 export const MainPage = (props) => {
     return (
         <div className="center">
-            <h1>?מה תרצה לחשב</h1>
-            <Link to={'/pizza-anatot/pizzaCalculator'}><PizzaButton className={'button button--anthe'} text='פיצה' /></Link>
+            <h1>?מה תרצה לעשות</h1>
+            <Link to={'/pizza-anatot/pizzaCalculator'}><PizzaButton className={'button button--anthe'} text='חישוב הזמנה' /></Link>
+            <br></br>
+            <Link to={'/pizza-anatot/phoneFormat'}><PizzaButton className={'button button--anthe'} text='פורמט לקיחת הזמנה מלקוח בטלפון'/></Link>
             <div>
                 <br></br>
                 <Conclusion price={props.price} fTray={props.fTray} usualExtra={props.usualExtra} twoExtra={props.twoExtra}
