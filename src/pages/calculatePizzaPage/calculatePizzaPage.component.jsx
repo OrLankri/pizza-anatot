@@ -2,97 +2,86 @@ import React from "react";
 import { PizzaButton } from "../../components/button/button.component";
 import './calculatePizzaPage.css'
 import { Quantity } from "../../components/quantity/quantity.component";
+import { Conclusion } from "../../components/conclusion/conclusion.component";
 
-export class CalculatePizzaPage extends React.Component {
-    constructor() {
-        super()
+export const CalculatePizzaPage = (props) => {
 
-
-        this.state = {
-            price: 0,
-            fTray: 0,
-            usualExtra: 0,
-            twoExtra: 0
-        }
-    }
-
-
-
-
-    fTrayClick = () => {
-        this.setState({ price: this.state.price + 58 }, () => console.log(this.state.price))
-        this.setState({ fTray: this.state.fTray + 1 }, () => console.log(this.state.fTray))
-    }
-
-    addUsualExtrasClick = () => {
-        this.setState({ price: this.state.price + 63 }, () => console.log(this.state.price))
-        this.setState({ usualExtra: this.state.usualExtra + 1 }, () => console.log(this.state.usualExtra))
-    }
-
-    twoShekelExtraClick = () => {
-        this.setState({ price: this.state.price + 2 }, () => console.log(this.state.price))
-        this.setState({ twoExtra: this.state.twoExtra + 2 }, () => console.log(this.state.twoExtra))
-    }
-
-    removeFClick = () => {
-        this.setState({ price: this.state.price - 58 }, () => console.log(this.state.price))
-        this.setState({ fTray: this.state.fTray - 1 }, () => console.log(this.state.fTray))
-    }
-
-    remove63Click = () => {
-        this.setState({ price: this.state.price - 63 }, () => console.log(this.state.price))
-        this.setState({ usualExtra: this.state.usualExtra - 1 }, () => console.log(this.state.usualExtra))
-    }
-    remove2Click = () => {
-        this.setState({ price: this.state.price - 2 }, () => console.log(this.state.price))
-        this.setState({ twoExtra: this.state.twoExtra - 2 }, () => console.log(this.state.twoExtra))
-    }
-
-    resetAllClick = () => {
-        this.setState({ fTray: 0 })
-        this.setState({ price: 0 })
-        this.setState({ usualExtra: 0 })
-        this.setState({ twoExtra: 0 })
+    const fTrayClick = () => {
+        props.onChangePrice(props.price + 58)
+        props.onChangeFTray(props.fTray + 1)
 
     }
 
-
-
-    render() {
-        return (
-            <div className="center">
-                <h1>חישוב מגשים</h1>
-                <table className="center">
-                    <tbody>
-                        <Quantity id='familyTrayQuantity' quan={this.state.fTray} onClickAdd={this.fTrayClick} onClickRemove={this.removeFClick} text='משפחתית' />
-                        <tr>
-                            <Quantity id='tray63Quantity' quan={this.state.usualExtra} onClickAdd={this.addUsualExtrasClick} onClickRemove={this.remove63Click} text='מגש תוספות (63)' />
-                        </tr>
-                        <tr>
-                            <Quantity id='extras2shekelsQuantity' quan={this.state.twoExtra} onClickAdd={this.twoShekelExtraClick} onClickRemove={this.remove2Click} text='פטריות, בולגרית, אקסטרה גבינה' />
-                        </tr>
-                        <tr>
-                            <th>{this.state.price} :מחיר</th>
-                        </tr>
-                        <tr></tr>
-                        <tr>
-                            <th>:סיכום</th>
-                        </tr>
-                        <tr>
-                            משפחתית: {this.state.fTray}
-                            <br />
-                            מגש תוספות: {this.state.usualExtra}
-                            <br />
-                            תוספות 2 שקל: {this.state.twoExtra}</tr>
-                        <br />
-                        <tr>
-                            <td><PizzaButton id="reset" text='איפוס' onClick={this.resetAllClick} /></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-
-
-        )
+    const addUsualExtrasClick = () => {
+        props.onChangePrice(props.price + 63)
+        props.onChangeUsualExtra(props.usualExtra + 1)
     }
+
+    const twoShekelExtraClick = () => {
+        props.onChangePrice(props.price + 2)
+        props.onChangeTwoExtra(props.twoExtra + 2)
+    }
+
+    const removeFClick = () => {
+        props.onChangePrice(props.price - 58)
+        props.onChangeFTray(props.fTray - 1)
+    }
+
+    const remove63Click = () => {
+        props.onChangePrice(props.price - 63)
+        props.onChangeUsualExtra(props.usualExtra - 1)
+    }
+
+    const remove2Click = () => {
+        props.onChangePrice(props.price - 2)
+        props.onChangeTwoExtra(props.twoExtra - 2)
+    }
+
+    const resetAllClick = () => {
+        props.onChangePrice(0)
+        props.onChangeFTray(0)
+        props.onChangeTwoExtra(0)
+        props.onChangeUsualExtra(0)
+    }
+
+    const bigBottleAddClick = () => {
+        props.onChangeBigBottle(props.bigBottle + 1)
+        props.onChangePrice(props.price + 12)
+    }
+    const bigBottleRemoveClick = () => {
+        props.onChangeBigBottle(props.bigBottle - 1)
+        props.onChangePrice(props.price - 12)
+    }
+
+    return (
+        <div className="center">
+            <h1>חישוב מגשים</h1>
+            <table className="center">
+                <tbody>
+                    <Quantity id='familyTrayQuantity' quan={props.fTray} onClickAdd={fTrayClick} onClickRemove={removeFClick} text='משפחתית' />
+                    <tr>
+                        <Quantity id='tray63Quantity' quan={props.usualExtra} onClickAdd={addUsualExtrasClick} onClickRemove={remove63Click} text='מגש תוספות (63)' />
+                    </tr>
+                    <tr>
+                        <Quantity id='extras2shekelsQuantity' quan={props.twoExtra} onClickAdd={twoShekelExtraClick} onClickRemove={remove2Click} text='פטריות, בולגרית, אקסטרה גבינה' />
+                    </tr>
+                    <tr>
+                        <Quantity id='bigBottleQuantity' quan={props.bigBottle} onClickAdd={bigBottleAddClick} onClickRemove={bigBottleRemoveClick} text='בקבוק שתיה גדול' />
+                    </tr>
+                    <tr>
+                        <th>{props.price} :מחיר</th>
+
+                    </tr>
+                </tbody>
+            </table>
+            <Conclusion price={props.price} fTray={props.fTray} usualExtra={props.usualExtra} twoExtra={props.twoExtra}
+                onChangePrice={props.onChangePrice} onChangeUsualExtra={props.onChangeUsualExtra}
+                onChangeTwoExtra={props.onChangeTwoExtra} onChangeFTray={props.onChangeFTray}
+                bigBottle={props.bigBottle}
+                    onChangeBigBottle={props.onChangeBigBottle}
+            />
+        </div>
+
+
+    )
 }

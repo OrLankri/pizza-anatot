@@ -5,10 +5,17 @@
     color: white;
     font-size: 30px;
     
-  }
+
+ }
 .icon{
     margin: 20px;
 }
 .price{
     margin: 100px;
+}
+
+.pricePos{
+    text-align: left;
+    display: left;
+    float: left;
 }
